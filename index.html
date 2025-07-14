@@ -39,12 +39,15 @@
             padding: 0 2rem;
         }
 
-        .logo {
-            font-size: 2rem;
-            font-weight: bold;
-            color: #FF6B35;
-            text-decoration: none;
-        }
+       .logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 80px; /* Adjust this value to match your desired logo size */
+    width: auto;
+}
 
         .nav-links {
             display: flex;
@@ -78,97 +81,187 @@
             transform: translateY(-2px);
         }
 
-        /* Hero Section */
-        .hero {
-            height: 100vh;
-            background: linear-gradient(rgba(44, 44, 44, 0.7), rgba(27, 77, 92, 0.7)), 
-                        linear-gradient(45deg, #FF6B35, #1B4D5C);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: white;
-            position: relative;
-            overflow: hidden;
-            padding-top: 80px; /* Compensa o header fixo */
-        }
+     /* Hero Slim - Versão Sofisticada */
+.hero-slim {
+    height: 80vh;
+    width: 100%;
+    max-height: none;
+    min-height: none;
+    display: flex;
+    position: relative;
+    overflow: hidden;
+    
+}
+.hero-slim,
+.video-container,
+.hero-content {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
 
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><polygon fill="%23FF6B35" fill-opacity="0.1" points="0,0 1000,300 1000,1000 0,700"/></svg>');
-            animation: float 6s ease-in-out infinite;
-        }
 
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
-        }
 
-        .hero-content {
-            max-width: 800px;
-            z-index: 2;
-            position: relative;
-            padding: 0 20px;
-        }
+.video-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
 
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-        }
+.hero-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: cover;
+    z-index: 1;
+}
 
-        .hero p {
-            font-size: 1.3rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
-        }
 
-        .hero-buttons {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(27,77,92,0.8) 0%, rgba(27,77,92,0.4) 50%, rgba(27,77,92,0.8) 100%);
+    z-index: 2;
+}
 
-        .btn-primary {
-            background: linear-gradient(45deg, #FF6B35, #FF8A65);
-            color: white;
-            padding: 1rem 2rem;
-            border: none;
-            border-radius: 30px;
-            font-size: 1.1rem;
-            font-weight: bold;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
-        }
+.hero-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    z-index: 3;
+    padding: 0 5%;
+}
 
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(255, 107, 53, 0.4);
-        }
+.content-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: left;
+    width: 100%;
+}
 
-        .btn-secondary {
-            background: transparent;
-            color: white;
-            padding: 1rem 2rem;
-            border: 2px solid white;
-            border-radius: 30px;
-            font-size: 1.1rem;
-            font-weight: bold;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
+.hero-slim h1 {
+    font-size: 2.8rem;
+    margin-bottom: 1.5rem;
+    color: white;
+    line-height: 1.2;
+    max-width: 600px;
+    font-weight: 700;
+}
 
-        .btn-secondary:hover {
-            background: white;
-            color: #2C2C2C;
-        }
+.hero-slim p {
+    font-size: 1.2rem;
+    margin-bottom: 2.5rem;
+    color: rgba(255,255,255,0.9);
+    max-width: 500px;
+    line-height: 1.6;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.btn-primary {
+    background: #FF6B35;
+    color: white;
+    padding: 12px 30px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: 2px solid #FF6B35;
+}
+
+.btn-primary:hover {
+    background: transparent;
+    color: #FF6B35;
+}
+
+.btn-secondary {
+    background: transparent;
+    color: white;
+    padding: 12px 30px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: 2px solid white;
+}
+
+.btn-secondary:hover {
+    background: white;
+    color: #1B4D5C;
+}
+
+/* Efeitos de animação */
+.content-wrapper {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 1s ease-out forwards 0.3s;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsivo */
+@media (max-width: 992px) {
+    .hero-slim {
+        height: 60vh;
+        min-height: 400px;
+    }
+    
+    .hero-slim h1 {
+        font-size: 2.2rem;
+    }
+    
+    .hero-slim p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-slim {
+        height: 80vh;
+        flex-direction: column;
+    }
+    
+    .hero-content {
+        justify-content: flex-end;
+        padding-bottom: 60px;
+    }
+    
+    .content-wrapper {
+        text-align: center;
+    }
+    
+    .hero-slim h1,
+    .hero-slim p {
+        max-width: 100%;
+    }
+    
+    .hero-buttons {
+        justify-content: center;
+    }
+}
+
+       
 
         /* Sections common styles */
         section {
@@ -202,60 +295,105 @@
 
         /* About Section */
         .about {
-            background: #F5F5F5;
-        }
+    background: #F5F5F5;
+    padding: 4rem 0;
+}
 
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            align-items: center;
-        }
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: flex-start;
+}
 
-        .about-text h3 {
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
-            color: #FF6B35;
-        }
+.about-text h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: #FF6B35;
+}
 
-        .about-text p {
-            font-size: 1.1rem;
-            margin-bottom: 1.5rem;
-            line-height: 1.8;
-        }
+.about-text p {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+}
 
-        .about-stats {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 2rem;
-        }
+/* Slideshow Styles */
+.about-slideshow {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
 
-        .stat-item {
-            text-align: center;
-            padding: 2rem;
-            background: white;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-        }
+.slideshow-container {
+    position: relative;
+    max-width: 100%;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
 
-        .stat-item:hover {
-            transform: translateY(-5px);
-        }
+.mySlides {
+    display: none;
+}
 
-        .stat-number {
-            font-size: 2.5rem;
-            font-weight: bold;
-            color: #FF6B35;
-            display: block;
-        }
+.mySlides img {
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+    object-fit: cover;
+}
 
-        .stat-label {
-            font-size: 1rem;
-            color: #2C2C2C;
-            margin-top: 0.5rem;
-        }
+/* Fading animation */
+.fade {
+    animation-name: fade;
+    animation-duration: 2s;
+}
 
+@keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+}
+
+/* Stats Styles */
+.about-stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.stat-item {
+    text-align: center;
+    padding: 2rem;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.stat-item:hover {
+    transform: translateY(-5px);
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #FF6B35;
+    display: block;
+}
+
+.stat-label {
+    font-size: 1rem;
+    color: #2C2C2C;
+    margin-top: 0.5rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .about-content {
+        grid-template-columns: 1fr;
+    }
+}
         /* Services Section */
         .services {
             background: white;
@@ -562,49 +700,85 @@
 </head>
 <body>
     <!-- WhatsApp Floating Button -->
-    <a href="https://wa.me/5575999999999" class="whatsapp-float" target="_blank" aria-label="Chat no WhatsApp">
+    <a href="https://wa.me/5521997089491" class="whatsapp-float" target="_blank" aria-label="Chat no WhatsApp">
         <i class="fab fa-whatsapp"></i>
     </a>
 
     <!-- Header -->
     <header>
-        <nav>
-            <a href="#" class="logo">TF FIT</a>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">Sobre</a></li>
-                <li><a href="#services">Modalidades</a></li>
-                <li><a href="#plans">Planos</a></li>
-                <li><a href="#contact">Contato</a></li>
-            </ul>
-            <a href="#contact" class="cta-button">Experimente Grátis</a>
-        </nav>
-    </header>
+    <nav>
+        <a href="#" class="logo">
+            <img src="https://i.imgur.com/Y2sjE1Y.png" alt="TF FIT Logo">
+        </a>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">Sobre</a></li>
+            <li><a href="#services">Modalidades</a></li>
+            <li><a href="#plans">Planos</a></li>
+            <li><a href="#contact">Contato</a></li>
+        </ul>
+        <a href="#contact" class="cta-button">Experimente Grátis</a>
+    </nav>
+</header>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-content">
+<!-- Hero Section - Versão Refinada -->
+<section id="home" class="hero-slim">
+    <div class="video-container">
+        <video autoplay muted loop playsinline class="hero-video">
+            <source src="https://i.imgur.com/hHWGsRi.mp4" type="video/mp4">
+        </video>
+        <div class="video-overlay"></div>
+    </div>
+    <div class="hero-content">
+        <div class="content-wrapper">
             <h1>Transforme seu Corpo<br>Transforme sua Vida</h1>
-            <p>A mais moderna academia de Mutuípe está chegando! Equipamentos de última geração, ambiente climatizado e profissionais qualificados esperando por você.</p>
+            <p>A excelência em fitness chegou a Mutuípe. Ambiente premium, equipamentos de última geração e profissionais qualificados.</p>
             <div class="hero-buttons">
                 <a href="#plans" class="btn-primary">Conheça os Planos</a>
-                <a href="#about" class="btn-secondary">Saiba Mais</a>
+                <a href="#contact" class="btn-secondary">Agende uma Visita</a>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <h2 class="section-title fade-in">Sobre a TF FIT</h2>
-            <div class="about-content">
-                <div class="about-text fade-in">
-                    <h3>Sua Nova Casa do Fitness em Mutuípe</h3>
-                    <p>A TF FIT chega a Mutuípe com uma proposta revolucionária: oferecer uma experiência completa de fitness com a mais alta qualidade em instalações, equipamentos e atendimento personalizado.</p>
-                    <p>Nossa academia foi projetada pensando no seu conforto e resultados. Com arquitetura moderna, ambiente climatizado e os melhores equipamentos do mercado, criamos o espaço perfeito para sua transformação.</p>
-                    <p>Mais que uma academia, somos uma comunidade dedicada ao seu bem-estar e sucesso.</p>
+   <section id="about" class="about">
+    <div class="container">
+        <h2 class="section-title fade-in">Sobre a TF FIT</h2>
+        <div class="about-content">
+            <div class="about-text fade-in">
+                <h3>💫 A História por Trás da TF Fit – Um Sonho com Propósito</h3>
+                <p>Na comunidade Cidade de Deus, nasceu uma menina com fé no coração e brilho nos olhos... Ana Lúcia Silva, a Tina. Uma mulher que aprendeu cedo que sonhos são possíveis — quando temos fé</p>
+                <p>Tina acreditou mesmo quando não era visível. Trabalhou, se dedicou, renunciou...
+E então, o plano de Deus começou a se revelar.</p>
+                <p>Assim nasceu a TF Fit.
+Mais do que uma academia: uma família.</p>
+                <p>Um lugar para pais, mães e filhos treinarem juntos.
+Um espaço onde o corpo é cuidado, mas o espírito também é fortalecido.</p>
+                <p>Tina carrega valores que hoje inspiram uma comunidade:
+responsabilidade, integridade, sabedoria, excelência...</p>
+                <p>E acima de tudo: Deus.
+Porque como ela sempre diz:
+"Tudo posso naquele que me fortalece."</p>
+                <p>Bem-vindo à TF Fit.
+Uma família. Um propósito. Uma história escrita por Deus.</p>
+            </div>
+            
+            <!-- Slideshow Container -->
+            <div class="about-slideshow fade-in">
+                <div class="slideshow-container">
+                    <div class="mySlides fade">
+                        <img src="https://i.imgur.com/IQ45KJA.jpeg" alt="TF Fit - Espaço interno">
+                    </div>
+                    <div class="mySlides fade">
+                        <img src="https://i.imgur.com/IQ45KJA.jpeg" alt="TF Fit - Equipamentos">
+                    </div>
+                    <div class="mySlides fade">
+                        <img src="https://i.imgur.com/IQ45KJA.jpeg" alt="TF Fit - Comunidade">
+                    </div>
                 </div>
-                <div class="about-stats fade-in">
+                
+                <!-- Stats abaixo do slideshow -->
+                <div class="about-stats">
                     <div class="stat-item">
                         <span class="stat-number">500m²</span>
                         <span class="stat-label">Área Total</span>
@@ -624,7 +798,8 @@
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- Services Section -->
     <section id="services" class="services">
@@ -732,7 +907,7 @@
                         <div class="contact-icon">📱</div>
                         <div>
                             <strong>WhatsApp</strong><br>
-                            (75) 9 9999-9999
+                            (21) 997089491
                         </div>
                     </div>
                     <div class="contact-item">
@@ -791,6 +966,22 @@
     </footer>
 
     <script>
+
+let slideIndex = 0;
+showSlides();
+
+function showSlides() {
+    let i;
+    let slides = document.getElementsByClassName("mySlides");
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";  
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) {slideIndex = 1}    
+    slides[slideIndex-1].style.display = "block";  
+    setTimeout(showSlides, 5000); // Change image every 5 seconds
+}
+
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
