@@ -4,12 +4,13 @@
  */
 
 // ===== MOBILE MENU FUNCTIONALITY =====
+// ===== MOBILE MENU FUNCTIONALITY =====
 class MobileMenu {
     constructor() {
         this.menuToggle = document.getElementById('menuToggle');
         this.mobileMenu = document.getElementById('mobileMenu');
         this.overlay = document.getElementById('overlay');
-        this.closeMenu = document.getElementById('closeMenu');
+        this.closeMenuBtn = document.getElementById('closeMenu'); // Renomeado aqui
         this.mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
         
         this.init();
@@ -26,8 +27,8 @@ class MobileMenu {
         }
 
         // Close menu
-        if (this.closeMenu) {
-            this.closeMenu.addEventListener('click', () => this.closeMenu());
+        if (this.closeMenuBtn) { // Atualizado aqui
+            this.closeMenuBtn.addEventListener('click', () => this.closeMenu());
         }
 
         // Close menu when clicking overlay
@@ -56,7 +57,7 @@ class MobileMenu {
             document.body.style.overflow = 'hidden';
             
             // Focus management for accessibility
-            this.closeMenu.focus();
+            this.closeMenuBtn.focus(); // Atualizado aqui
         }
     }
 
